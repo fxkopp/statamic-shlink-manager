@@ -1,0 +1,47 @@
+{
+    "name": "fxkopp/statamic-shlink-manager",
+    "description": "Manage Shlink short URLs from the Statamic Control Panel",
+    "type": "statamic-addon",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felix Kopp",
+            "email": "felix@thinkwrong.de"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "shlinkio/shlink-php-sdk": "^3.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0",
+        "phpunit/phpunit": "^12.0",
+        "statamic/cms": "^6.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fxkopp\\StatamicShlinkManager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fxkopp\\StatamicShlinkManager\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Shlink Manager",
+            "description": "Manage Shlink short URLs from the Statamic Control Panel"
+        },
+        "laravel": {
+            "providers": [
+                "Fxkopp\\StatamicShlinkManager\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    }
+}
