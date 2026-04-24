@@ -28,6 +28,8 @@ class ServiceProvider extends AddonServiceProvider
 
     protected $config = false;
 
+    protected $translations = false;
+
     protected $routes = [
         'cp' => __DIR__.'/../routes/cp.php',
     ];
@@ -70,6 +72,7 @@ class ServiceProvider extends AddonServiceProvider
 
     public function bootAddon(): void
     {
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'shlink-manager');
         $this->bootPermissions();
         $this->bootNav();
     }
